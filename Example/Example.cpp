@@ -27,6 +27,35 @@ int main()// Example.cpp : Этот файл содержит функцию "ma
     Adm.log = "Gor";
     Adm.pas = "1Gq1";
 
+
+    int day, month, year, last, r;
+
+    printf("Введите в одной строке (цифрами");
+    printf("сегодняшнюю дату");
+    printf("(число месяц год) -> ");
+    cin >> day >> month >> year;
+    last = 0;
+    if (month == 2) {
+        if ((year % 4) != 0 && day == 28) last = 1;
+        if ((year % 4) == 0 && day == 29) last = 1;
+    }
+    else if ((month == 4 || month == 6 || month == 9 || month == 11) && (day == 31)) last = 1;
+    else if (day == 31) last = 1;
+    if (last == 1)
+    {
+        printf("Последний день месяца!\n"); day = 1;
+        if (month == 12)
+        {
+            month = 1; year++;
+            printf("С наступающим Новым годом!\n");
+        }
+        else month++;
+
+    }
+    else day++;
+
+    cout << day <<"." << month << "." << year<<endl;
+
     printf("Выбирете 1 действие \n 1:Войти \n 2:Регестрация \n 3:Сложение \n 4:Переворот 2-ух значного числа\n");
 
     cin >> usch;
@@ -41,7 +70,7 @@ int main()// Example.cpp : Этот файл содержит функцию "ma
 
         if (log == Adm.log && pas==Adm.pas) //оператор if проверяет на да нет. если да то запускает код в{}. Если нет и если нет else if(условие), то идет к else 
         {
-            printf("Вы типо вошли как админ\n");
+            printf("Вы вошли как админ\n");
             Adm.WhoI();
         }
         else //Если не подходит не 1 из if, else if то запускается else 
