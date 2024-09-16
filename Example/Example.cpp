@@ -66,6 +66,10 @@ int main()// Example.cpp : Этот файл содержит функцию "ma
     case 4:
         first.delsost();
         break;
+    default:
+        printf("Программы выключается");
+        return 0;
+        break;
     }
     
     
