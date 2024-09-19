@@ -18,29 +18,15 @@ public:
         cin >> a >> b;//Забираем и вводим в переменные числф написаные в консоль через пробел
         cout << a << "+" << b << "=" << a + b << endl; //выводим с подсчетом
     }
+
     void delsost() {
         printf("Введите 2-ух значное число\n");
         cin >> a;
         //с помошью % вы оставляете только остаток от деления!!
         cout << a % 10 << a / 10 << endl;
 
-
-       // char a;
-       // cin >> a;
-       //
-       //
-       // switch (a)
-       // {
-       // case '0':
-       //     printf("AAAAAAAA");
-       //     break;
-       //
-       //
-       // default:
-       //     break;
-       // }
-
     }
+
     void dnd() {
         int day, month, year; // день, месяц, год
         int c, y; // столетие и год в столетии
@@ -69,5 +55,35 @@ public:
         case 4: puts("Суббота"); break;
         case 5: puts("Воскресенье");
         }
+    }
+
+    void Zavtra(){
+        int day, month, year, last, r;
+
+        printf("Введите в одной строке (цифрами");
+        printf("сегодняшнюю дату");
+        printf("(число месяц год) -> ");
+        cin >> day >> month >> year;
+        last = 0;
+        if (month == 2) {
+            if ((year % 4) != 0 && day == 28) last = 1;
+            if ((year % 4) == 0 && day == 29) last = 1;
+        }
+        else if ((month == 4 || month == 6 || month == 9 || month == 11) && (day == 31)) last = 1;
+        else if (day == 31) last = 1;
+        if (last == 1)
+        {
+            printf("Последний день месяца!\n"); day = 1;
+            if (month == 12)
+            {
+                month = 1; year++;
+                printf("С наступающим Новым годом!\n");
+            }
+            else month++;
+
+        }
+        else day++;
+
+        cout << day << "." << month << "." << year << endl;
     }
 };
