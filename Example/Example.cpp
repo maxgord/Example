@@ -72,6 +72,9 @@ int main()// Example.cpp : Этот файл содержит функцию "ma
          case 5:
              first.Zavtra();
              break;
+         case 6:
+             first.mass();
+             break;
          default:
              printf("Программы выключается");
              return 0;

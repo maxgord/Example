@@ -3,6 +3,9 @@
 #include <string>
 #include <math.h>
 #include <iostream>
+#include <vector>
+#include <stdlib.h>
+#include <stdio.h>
 
 using namespace std;
 
@@ -25,6 +28,30 @@ public:
         //с помошью % вы оставляете только остаток от деления!!
         cout << a % 10 << a / 10 << endl;
 
+    }
+
+    void mass() {
+        int max{};     // максимальная длина строки - не больше 6 символов
+        cin >> max;
+        std::vector<int> numbers;       // массив для ввода строки
+
+        int i{};        // счетчик введенных символов
+        std::cout << "Enter numbers" << std::endl;
+        while (i < max)
+        {
+            int a;
+            std::cin >> a;
+            numbers.push_back(a);    // вводим число
+            i++;
+        }
+        // выводим массив в обратном порядке
+        for (i = 1; i <= max; ++i)
+        {
+            std::cout << numbers[max - i] << "\t";
+        }
+        std::cout << std::endl;
+
+        
     }
 
     void dnd() {
